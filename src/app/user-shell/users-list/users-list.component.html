@@ -1,5 +1,5 @@
 <mat-selection-list #userz [multiple]="false">
-    <a *ngFor="let user of users" (click)="openDialog()">
+    <a *ngFor="let user of users" (click)="openDialog(user.id)">
         <mat-list-option [value]="user.name">
             <span>{{user.id}}      {{user.name}}</span>
         </mat-list-option>

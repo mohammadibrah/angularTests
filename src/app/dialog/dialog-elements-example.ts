@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import {Component, Inject} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { User } from '../user-shell/user-shell.component';
+
 
 /**
  * @title Dialog elements
@@ -20,4 +22,6 @@ export class DialogElementsExample {
   selector: 'dialog-elements-example-dialog',
   templateUrl: 'dialog-elements-example-dialog.html',
 })
-export class DialogElementsExampleDialog {}
+export class DialogElementsExampleDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: User,){}
+}
